@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form id="myForm" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            
+            <button type="submit">Submit</button>
+            <p id="errorMessage" style="color: red;"></p>
+            
+        </form>
+        <script>
+            function validateForm() {
+                const name =document.getElementById("name").value.trim();
+                const email =document.getElementById("email").value.trim();
+                const errorMessage =document.getElementById("errorMessage");
+
+                errorMessage.textContent ="";
+
+                if (name === "") {
+                    errorMessage.textContent = "Name is required.";
+                    return false;
+                }
+
+                if (email === "") {
+                    errorMessage.textContent = "Email is required.";
+                    return false;
+            }
+            alert("Form submitted succesfully!");
+            return true;
+        }
+        </script>
+        <!-- <h1 id="greetings">Hello, visitor!</h1>
+        <button onclick="askName()">Enter your name</button>
+        <script>
+            function askName() {
+                userName = prompt("what is your name")
+            }
+        </script>
+        <script language="javascript" type ="text/javascript" src="hello.js"></script>
+        <script>
+            function showAlert(){
+                alert("Hello, this is an alert message!");
+            }
+        </script>
+        <button onclick="showAlert()">Click me</button>
+        <script>
+            function showConfirm() {
+                confirm("are you happy with the class?");
+            }
+        </script>
+        <button onclick="showAlert()">Click me</button> -->
+    </body>
+</html>
